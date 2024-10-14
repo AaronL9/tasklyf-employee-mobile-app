@@ -1,37 +1,60 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import { StyleSheet, Text, View } from "react-native";
+import { Tabs } from "expo-router";
+import { Colors } from "@/constants/Colors";
 
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import Home from "@/components/svg/Home";
+import TaskList from "@/components/svg/TaskList";
+import Bell from "@/components/svg/Bell";
+import Profile from "@/components/svg/Profile";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-      }}>
+        tabBarActiveTintColor: Colors.blue,
+        tabBarInactiveTintColor: Colors["seoncdary-grey"],
+        tabBarStyle: { height: 70 },
+        tabBarItemStyle: { paddingVertical: 10 },
+        tabBarLabelStyle: { fontFamily: "Poppins-Medium" },
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
-          ),
+          title: "Home",
+          tabBarLabel: "Home",
+          tabBarIcon: ({ color }) => <Home color={color} />,
         }}
       />
+
       <Tabs.Screen
-        name="explore"
+        name="task"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
-          ),
+          title: "Task",
+          tabBarLabel: "Task",
+          tabBarIcon: ({ color }) => <TaskList color={color} />,
+        }}
+      />
+
+      <Tabs.Screen
+        name="notification"
+        options={{
+          title: "Notification",
+          tabBarLabel: "Notice",
+          tabBarIcon: ({ color }) => <Bell color={color} withFill />,
+        }}
+      />
+
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: "Profile",
+          tabBarLabel: "Profile",
+          tabBarIcon: ({ color }) => <Profile color={color} />,
         }}
       />
     </Tabs>
   );
 }
+
+const styles = StyleSheet.create({});
