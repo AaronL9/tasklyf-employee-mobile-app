@@ -16,6 +16,7 @@ export default function TabLayout() {
         tabBarStyle: { height: 70 },
         tabBarItemStyle: { paddingVertical: 10 },
         tabBarLabelStyle: { fontFamily: "Poppins-Medium" },
+        headerShown: false,
       }}
     >
       <Tabs.Screen
