@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
-import { Header, Menu, LogoutModal } from '@/components/profile/ProfileComponents';
+import React, { useState } from "react";
+import { ScrollView, StyleSheet } from "react-native";
+import Header from "@/components/profile/Header";
+import ProfileMenu from "@/components/profile/ProfileMenu";
+import LogoutModal from "@/components/profile/LogoutModal";
 
 const ProfileScreen = () => {
   const [logoutModalVisible, setLogoutModalVisible] = useState(false);
@@ -17,11 +19,11 @@ const ProfileScreen = () => {
   return (
     <ScrollView style={styles.container}>
       <Header />
-      <Menu handleLogout={handleLogout} />
-      <LogoutModal 
-        visible={logoutModalVisible} 
-        onClose={() => setLogoutModalVisible(false)} 
-        onConfirm={confirmLogout} 
+      <ProfileMenu handleLogout={handleLogout} />
+      <LogoutModal
+        visible={logoutModalVisible}
+        onClose={() => setLogoutModalVisible(false)}
+        onConfirm={confirmLogout}
       />
     </ScrollView>
   );
@@ -30,7 +32,7 @@ const ProfileScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     padding: 20,
   },
 });
