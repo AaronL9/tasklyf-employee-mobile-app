@@ -100,13 +100,13 @@ interface CompletedTasksCardProps {
                         </View>
                         <Text style={styles.name}>{service.name}</Text>
                         <View style={styles.DetailsRow}>
-                            <FontAwesome6 name="phone" size={13} color="#000" style={styles.detailsicon} />
+                            <FontAwesome6 name="square-phone" size={13} color="#000" style={styles.detailsicon} />
                             <Text style={styles.phone}>{service.phone}</Text>
                         </View>
 
 
                         <View style={styles.DetailsRow}>
-                            <FontAwesome6 name="map-marker" size={13} color="#000" style={styles.detailsicon} />
+                            <FontAwesome6 name="location-dot" size={13} color="#000" style={styles.detailsicon} />
                             <Text style={styles.address}>{service.address}</Text>
                         </View>
                         <Text style={styles.ratingText}>Your Service Rate:</Text>
